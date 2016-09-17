@@ -10,6 +10,10 @@ namespace VirtualPet
     {
         static void Main(string[] args)
         {
+            VirtualPet CrabAppleHead = new VirtualPet("Crabby", 10, 10);
+            Console.WriteLine(CrabAppleHead.Apetite);
+            CrabAppleHead.FeedMe();
+            Console.WriteLine(CrabAppleHead.Apetite);
         }
     }
 }
