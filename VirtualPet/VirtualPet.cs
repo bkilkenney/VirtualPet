@@ -9,7 +9,7 @@ namespace VirtualPet
     class VirtualPet
     {
         //Private instance variables - these variables can only be accessed from within the class and can't be manipulated by outside forces
-        private string name;
+        
         private int apetite;
         private int crabiness;
         private int sleepiness;
@@ -24,19 +24,11 @@ namespace VirtualPet
 
         //Properties
 
-        public string Name
+       
+        public int Eat
         {
-           get
-            {
-                return this.name;
-            } 
-             //Can have a get without a set.  Name won't change in this console app.  
-        }
-
-        public int Apetite
-        {
-            get { return apetite; }  //This format is more concise but relies less on reading in a cascading pattern
-            set { this.apetite = value; }
+            get { return Eat; }  //This format is more concise but relies less on reading in a cascading pattern
+            set { this.Eat = value; }
         }
         
         public int Mood
