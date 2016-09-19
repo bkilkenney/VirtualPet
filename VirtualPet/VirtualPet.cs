@@ -8,63 +8,44 @@ namespace VirtualPet
 {
     class VirtualPet
     {
-        //Private instance variables - these variables can only be accessed from within the class and can't be manipulated by outside forces
-        
+        //fields, aka private instance variables, can only be accessed from within the class       
         private int apetite;
         private int crabiness;
         private int sleepiness;
 
-        //Public access modifiers can be seen or used from anywhere, even outside the class.  CONSTRUCTORS
-        public VirtualPet(string name, int apetite, int crabiness, int sleepiness)
-        {            
+
+        //properties
+        //The following format is concise but doesn't read in the same cascading way, either works, just preference:
+
+        public int Apetite
+        {
+            get { return this.apetite; }
+            set { this.apetite = value; }
+        }
+
+        public int Crabiness
+        {
+            get { return this.crabiness; }
+            set { this.crabiness = value; }
+        }
+
+        public int Sleepiness
+        {
+            get { return this.sleepiness; }
+            set { this.sleepiness = value; }
+        }
+
+        //Public access modifiers can be seen or used from anywhere, even outside the class. CONSTRUCTORS:
+
+        public VirtualPet(int apetite, int crabiness, int sleepiness)
+        {
             this.apetite = apetite;
             this.crabiness = crabiness;
             this.sleepiness = sleepiness;
         }
 
-        //Properties
+        //Methods, the action:
 
-       
-        public int Eat
-        {
-            get { return Eat; }  //This format is more concise but relies less on reading in a cascading pattern
-            set { this.Eat = value; }
-        }
-        
-        public int Mood
-        {
-            get { return crabiness; }
-            set { this.crabiness = value; }
-        }
-        public int Sleepiness
-        {
-            get { return sleepiness; }
-            set { this.sleepiness = value; }
-        }
-
-        //Methods
-        public int FeedMe()
-        {
-            apetite -= 10;
-            crabiness += 10;
-            return apetite;  //Need a return to prevent errors               
-        }
-
-        public int Haunt()
-        {
-            crabiness += 15; //CrabAppleHead's fav activity is to haunt
-            apetite += 10;
-            sleepiness += 15;
-            return crabiness;
-        }
-
-        public int Nap()
-        {
-            apetite += 5;
-            crabiness += 5;
-            sleepiness -= 5;
-            return apetite; 
-        }
         public void Status()
         {
             Console.WriteLine("Apetite = " + apetite);
@@ -72,6 +53,33 @@ namespace VirtualPet
             Console.WriteLine("Sleepiness = " + sleepiness);
         }
 
-     }
+        public void FeedME()
+        {
+            apetite -= 10;
+            crabiness += 10;
+            sleepiness += 10;
+        }
+
+        public void Haunt()
+        {
+            crabiness += 15;
+            apetite += 10;
+            sleepiness -= 10;
+        }
+
+        public void Nap()
+        {
+            apetite += 5;
+            crabiness += 5;
+            sleepiness -= 5;
+        }
+
+        public void Tick()
+        {
+            sleepiness += 5;
+            crabiness -= 5;
+            apetite += 5;
+        }
+    }
 }
 

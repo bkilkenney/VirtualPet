@@ -10,53 +10,73 @@ namespace VirtualPet
     {
         static void Main(string[] args)
         {
-            System.Threading.Thread.Sleep(1000);
+            VirtualPet CrabAppleHead = new VirtualPet(25, 25, 25);
 
-            VirtualPet CrabAppleHead = new VirtualPet("CrabAppleHead", 25, 25, 25);
-            System.Threading.Thread.Sleep(1000);
+            Console.Clear();
+
             Console.WriteLine("Hello, I'm Crabapplehead, what would you like to do today?");
-            System.Threading.Thread.Sleep(1000);
-            Console.WriteLine("Select from the following menu:");
-            System.Threading.Thread.Sleep(1000);
             Console.WriteLine();
-            System.Threading.Thread.Sleep(2000);
-            Console.WriteLine("1: Eat Crabapples");
-            System.Threading.Thread.Sleep(2000);
-            Console.WriteLine("2: Haunt Children");
-            System.Threading.Thread.Sleep(2000);
-            Console.WriteLine("3: Nap");
 
-            //Crabapplehead's vitals
-            System.Threading.Thread.Sleep(2000);
-            CrabAppleHead.Status();
+//Creating loop so user can continue to play until they quit
 
-           
-
-            int answer = int.Parse(Console.ReadLine());
-
-            if (answer == 1)
+            while (true)
             {
-                CrabAppleHead.FeedMe();
-                Console.WriteLine(CrabAppleHead.FeedMe());
-            }
-            else if (answer == 2)
-            {
-                CrabAppleHead.Haunt();
-                Console.WriteLine(CrabAppleHead.Haunt());
-            }
-            else if (answer == 3)
-            {
-                CrabAppleHead.Nap();
-                Console.WriteLine(CrabAppleHead.Nap());
-            }
-            else
-            {
-                Console.WriteLine("Invalid answer, Crabapplehead doesn't want to be you pet anymore, gave over.");
-            }
 
-/*Need to make the game loop until player wins or loses,
-add in Tick and then try to implement stretch features*/
+//Introduction and vitals "Scoreboard":
+                Console.WriteLine("*Player1, you must figure out what Crabapplehead likes in order to win*");
+                Console.WriteLine();
+                CrabAppleHead.Status();
+                Console.WriteLine();
 
+//Criteria for winning the game:
+                if (CrabAppleHead.Apetite <= 0 || CrabAppleHead.Crabiness >= 50 || CrabAppleHead.Sleepiness >= 50)
+                {
+                    Console.WriteLine("You win!");
+                    break;
+                }
+
+//Choices for what to do with your Crabapplehead:
+                Console.WriteLine("Select from the following menu: ");
+                Console.WriteLine();
+
+                System.Threading.Thread.Sleep(1000);
+                Console.WriteLine("1: Eat Crabapples");
+
+                System.Threading.Thread.Sleep(1000);
+                Console.WriteLine("2: Haunt People");
+
+                System.Threading.Thread.Sleep(1000);
+                Console.WriteLine("3: Nap");
+
+//Actions based on methods in VirtualPet class and users' selection: 
+                int answer = int.Parse(Console.ReadLine());
+
+                switch (answer)
+                {
+                    case 1:
+                        CrabAppleHead.FeedME();
+                        break;
+
+                    case 2:
+                        CrabAppleHead.Haunt();
+                        break;
+
+                    case 3:
+                        CrabAppleHead.Nap();
+                        break;
+
+                    default:
+                        Console.WriteLine("Invalid answer, you might be the next victim to haunted by Crabapplehead!");
+                        break;
+                }
+
+//Tick method also manipulates vital stats:
+            CrabAppleHead.Tick();
+
+//Updates vitals(Scoreboard):
+            Console.Clear();
+
+            }
         }
-     }
+    }
 }
