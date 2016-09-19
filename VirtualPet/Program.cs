@@ -26,6 +26,10 @@ namespace VirtualPet
             System.Threading.Thread.Sleep(2000);
             Console.WriteLine("3: Nap");
 
+            //Crabapplehead's vitals
+            System.Threading.Thread.Sleep(2000);
+            CrabAppleHead.Status();
+
            
 
             int answer = int.Parse(Console.ReadLine());

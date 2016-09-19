@@ -45,16 +45,16 @@ namespace VirtualPet
         //Methods
         public int FeedMe()
         {
-            apetite -= 5;
-            crabiness += 3;
+            apetite -= 10;
+            crabiness += 10;
             return apetite;  //Need a return to prevent errors               
         }
 
         public int Haunt()
         {
             crabiness += 15; //CrabAppleHead's fav activity is to haunt
-            apetite -= 3;
-            sleepiness += 5;
+            apetite += 10;
+            sleepiness += 15;
             return crabiness;
         }
 
@@ -64,6 +64,12 @@ namespace VirtualPet
             crabiness += 5;
             sleepiness -= 5;
             return apetite; 
+        }
+        public void Status()
+        {
+            Console.WriteLine("Apetite = " + apetite);
+            Console.WriteLine("Crabiness = " + crabiness);
+            Console.WriteLine("Sleepiness = " + sleepiness);
         }
 
      }
