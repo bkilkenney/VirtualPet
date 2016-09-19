@@ -8,14 +8,14 @@ namespace VirtualPet
 {
     class VirtualPet
     {
-        //fields, aka private instance variables, can only be accessed from within the class       
+//fields, aka private instance variables, can only be accessed from within the class       
         private int apetite;
         private int crabiness;
         private int sleepiness;
 
 
-        //properties
-        //The following format is concise but doesn't read in the same cascading way, either works, just preference:
+//properties:
+//The following format is concise but doesn't read in the same cascading way, either works, just preference:
 
         public int Apetite
         {
@@ -35,7 +35,7 @@ namespace VirtualPet
             set { this.sleepiness = value; }
         }
 
-        //Public access modifiers can be seen or used from anywhere, even outside the class. CONSTRUCTORS:
+//Public access modifiers can be seen or used from anywhere, even outside the class. CONSTRUCTORS:
 
         public VirtualPet(int apetite, int crabiness, int sleepiness)
         {
@@ -44,7 +44,7 @@ namespace VirtualPet
             this.sleepiness = sleepiness;
         }
 
-        //Methods, the action:
+//Methods, the action:
 
         public void Status()
         {

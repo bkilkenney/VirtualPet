@@ -9,10 +9,16 @@ namespace VirtualPet
     class Program
     {
         static void Main(string[] args)
-        {
+        {            
+            Console.WriteLine("     ( )     ");
+            Console.WriteLine("    \\_|_/      ");
+            Console.WriteLine("      |        ");
+            Console.WriteLine("     / \\       ");
+
+//New instance variable
             VirtualPet CrabAppleHead = new VirtualPet(25, 25, 25);
 
-            Console.Clear();
+            
 
             Console.WriteLine("Hello, I'm Crabapplehead, what would you like to do today?");
             Console.WriteLine();
