@@ -9,21 +9,20 @@ namespace VirtualPet
     class Program
     {
         static void Main(string[] args)
-        {            
+        {
+//Ascii Art:
             Console.WriteLine("     ( )     ");
             Console.WriteLine("    \\_|_/      ");
             Console.WriteLine("      |        ");
             Console.WriteLine("     / \\       ");
 
-//New instance variable
+//New instance variable, vital signs all start at 25(arbitrary):
             VirtualPet CrabAppleHead = new VirtualPet(25, 25, 25);
-
-            
-
+           
             Console.WriteLine("Hello, I'm Crabapplehead, what would you like to do today?");
             Console.WriteLine();
 
-//Creating loop so user can continue to play until they quit
+//Creating loop so game goes until user wins:
 
             while (true)
             {

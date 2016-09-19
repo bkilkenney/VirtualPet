@@ -8,7 +8,7 @@ namespace VirtualPet
 {
     class VirtualPet
     {
-//fields, aka private instance variables, can only be accessed from within the class       
+//private fields(instance variables), which can only be accessed from within the class:      
         private int apetite;
         private int crabiness;
         private int sleepiness;
